@@ -31,8 +31,8 @@ window.onload = () => {
 				if (body.room !== room) {
 					window.parent.postMessage({sender: "Verse", message: body.room}, "*");
 					history.replaceState(null, null, "/" + body.room)
+					embedURL = body.url
 				}
-				embedURL = body.url
             }
         });
 	}

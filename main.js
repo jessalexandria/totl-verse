@@ -220,8 +220,6 @@ async function main(embedURL) {
 		const startURL = params.get('url')
 		if (startURL) {
 			hb.tabs.update({url: startURL})
-		} else {
-			hb.tabs.update({url: "https://totl.us/verse/dashboard"})
 		}
 	}
 }

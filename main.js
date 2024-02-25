@@ -7,7 +7,10 @@ import fontURL from "./fonts/helvetiker_regular.typeface.json?url"
 
 import Hyperbeam from "@hyperbeam/web"
 
-(async () => {
+window.onload = () => {
+
+	window.parent.postMessage({status: "loaded"}, "*");
+
 	let embedURL = "" // Running locally and you have an embed URL? Set it here
 	if (embedURL === "") {
 		console.log("CHOOSING ROOM");
@@ -34,7 +37,8 @@ import Hyperbeam from "@hyperbeam/web"
         });
 	}
 	main(embedURL)
-})()
+
+}
 
 async function main(embedURL) {
 	const scene = new THREE.Scene()

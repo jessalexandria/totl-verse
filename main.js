@@ -10,20 +10,25 @@ import Hyperbeam from "@hyperbeam/web"
 (async () => {
 	let embedURL = "" // Running locally and you have an embed URL? Set it here
 	if (embedURL === "") {
-		const room = location.pathname.substring(1)
-		console.log(room)
-		window.parent.postMessage({sender: "Verse", message: room}, "*");
-		const req = await fetch("https://demo-api.tutturu.workers.dev/" + room)
-		if (req.status >= 400) {
-			alert("We are out of demo servers! Visit hyperbeam.dev to get your own API key")
-			return
-		}
-		const body = await req.json()
-		console.log(body.room);
-		if (body.room !== room) {
-			history.replaceState(null, null, "/" + body.room + location.search)
-		}
-		embedURL = body.url
+		window.addEventListener('message', async function(event) {
+            console.log("Message received from the parent: " + event.data);
+            if(event.data.sender === "Verse") {
+                let eventData = event.data;
+                console.log("VERSE ROOM RECEIVED: ", eventData)
+                const room = eventData.message;
+				const req = await fetch("https://demo-api.tutturu.workers.dev/" + room)
+				if (req.status >= 400) {
+					alert("We are out of demo servers! Visit hyperbeam.dev to get your own API key")
+					return
+				}
+				const body = await req.json()
+				if (body.room !== room) {
+					window.parent.postMessage({sender: "Verse", message: body.room}, "*");
+					history.replaceState(null, null, "/" + body.room)
+				}
+				embedURL = body.url
+            }
+        });
 	}
 	main(embedURL)
 })()

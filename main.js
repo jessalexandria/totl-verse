@@ -216,10 +216,12 @@ async function main(embedURL) {
 	}
 
 	function setStartURL() {
-		// const params = new URLSearchParams(location.search)
-		// const startURL = params.get('url')
-		// if (startURL) {
-		hb.tabs.update({url: "https://totl.us/verse/dashboard"})
-		//}
+		const params = new URLSearchParams(location.search)
+		const startURL = params.get('url')
+		if (startURL) {
+			hb.tabs.update({url: startURL})
+		} else {
+			hb.tabs.update({url: "https://totl.us/verse/dashboard"})
+		}
 	}
 }

@@ -131,6 +131,7 @@ async function main(embedURL, status) {
 	})
 
 	if(status === "new") {
+		console.log(hb.tabs)
 		hb.tabs.update({url: "https://totl.us/verse/dashboard"});
 	}
 

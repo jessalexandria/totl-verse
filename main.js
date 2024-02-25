@@ -32,11 +32,11 @@ window.onload = () => {
 					window.parent.postMessage({sender: "Verse", message: body.room}, "*");
 					history.replaceState(null, null, "/" + body.room)
 					embedURL = body.url
+					main(embedURL)
 				}
             }
         });
 	}
-	main(embedURL)
 
 }
 

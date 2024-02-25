@@ -13,15 +13,17 @@ import Hyperbeam from "@hyperbeam/web"
 		window.addEventListener('message', async function(event) {
             console.log("Message received from the parent: " + event.data);
             if(event.data.sender === "Verse") {
-                let eventData = event.data;
+                let eventData = event.data.message;
                 console.log("VERSE ROOM RECEIVED: ", eventData)
-                const room = eventData.message;
+                const room = eventData;
 				const req = await fetch("https://demo-api.tutturu.workers.dev/" + room)
 				if (req.status >= 400) {
 					alert("We are out of demo servers! Visit hyperbeam.dev to get your own API key")
 					return
 				}
 				const body = await req.json()
+				console.log("BODY.ROOM: ", body.room)
+				console.log("ROOM: ", room)
 				if (body.room !== room) {
 					window.parent.postMessage({sender: "Verse", message: body.room}, "*");
 					history.replaceState(null, null, "/" + body.room)

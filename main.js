@@ -32,11 +32,11 @@ window.onload = () => {
 					window.parent.postMessage({sender: "Verse", message: body.room}, "*");
 					console.log("EMBED URL: ", body.url)
 					embedURL = body.url
-					main(embedURL)
+					main(embedURL, "new")
 				} else {
 					console.log("EMBED URL: ", body.url)
 					embedURL = body.url
-					main(embedURL)
+					main(embedURL, "old")
 				}
             }
         });
@@ -44,7 +44,7 @@ window.onload = () => {
 
 }
 
-async function main(embedURL) {
+async function main(embedURL, status) {
 	const scene = new THREE.Scene()
 	const pointer = new THREE.Vector2()
 	const raycaster = new THREE.Raycaster()
@@ -129,6 +129,10 @@ async function main(embedURL) {
 		},
 		audioTrackCb: tryAudio
 	})
+
+	if(status === "new") {
+		hb.tabs.update({url: "https://totl.us/verse/dashboard"});
+	}
 
 	window.addEventListener("resize", onWindowResized)
 	window.addEventListener("wheel", onWheel)

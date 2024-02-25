@@ -30,7 +30,10 @@ window.onload = () => {
 				console.log("ROOM: ", room)
 				if (body.room !== room) {
 					window.parent.postMessage({sender: "Verse", message: body.room}, "*");
-					history.replaceState(null, null, "/" + body.room)
+					console.log("EMBED URL: ", body.url)
+					embedURL = body.url
+					main(embedURL)
+				} else {
 					console.log("EMBED URL: ", body.url)
 					embedURL = body.url
 					main(embedURL)

@@ -12,7 +12,7 @@ import Hyperbeam from "@hyperbeam/web"
 	if (embedURL === "") {
 		const room = location.pathname.substring(1)
 		console.log(room)
-		window.parent.postMessage(room, "*");
+		window.parent.postMessage({sender: "Verse", message: room}, "*");
 		const req = await fetch("https://demo-api.tutturu.workers.dev/" + room)
 		if (req.status >= 400) {
 			alert("We are out of demo servers! Visit hyperbeam.dev to get your own API key")

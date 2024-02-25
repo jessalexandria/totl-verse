@@ -184,6 +184,7 @@ async function main(embedURL, status) {
 		pointer.y = -(e.clientY / window.innerHeight) * 2 + 1
 		const intersects = getPlaneIntersects()
 		if (intersects.length > 0) {
+			controls.enabled = false;
 			controls.enableZoom = false;
 			const vector = new THREE.Vector3().copy(intersects[0].point)
 			plane.worldToLocal(vector)
@@ -194,8 +195,8 @@ async function main(embedURL, status) {
 				button: e.button
 			})
 		} else {
-			controls.enabled = true
-			controls.enableZoom = true
+			controls.enabled = true;
+			controls.enableZoom = true;
 		}
 	}
 

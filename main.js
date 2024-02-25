@@ -10,6 +10,7 @@ import Hyperbeam from "@hyperbeam/web"
 (async () => {
 	let embedURL = "" // Running locally and you have an embed URL? Set it here
 	if (embedURL === "") {
+		console.log("CHOOSING ROOM");
 		window.addEventListener('message', async function(event) {
             console.log("Message received from the parent: " + event.data);
             if(event.data.sender === "Verse") {

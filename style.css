@@ -34,16 +34,6 @@ html, body {
     z-index: 99;
 }
 
- #totlLogo {
-    position: fixed;
-    height: 40px;
-    width: auto;
-    top: 3.5%;
-    left: 2.25%;
-    pointer-events: none;
-    z-index: 999;
-} 
-
 #loader {
     position: absolute;
     height: 47.5px;

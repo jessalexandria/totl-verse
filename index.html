@@ -17,13 +17,28 @@
 		<link href="https://fonts.googleapis.com/css?family=Montserrat:400" rel="stylesheet">
 	</head>
 	<body>
-		<div id="threejscontainer"></div>
-		<div id="hbcontainer"></div>
-		<script type="module" src="/main.js"></script>
-		<img id="backgroundImg" src="./verseBackground.png" />
-		<h1 id="bottomText">Scroll to Zoom&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbspClick and Drag to Rotate&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbspArrows to Move</h1>
+		<div id="loaderContainer">
+			<img id="loadGif" src="./images/loader.gif" alt="Black" />
+		</div>
+		<div id="socialContainer">
+			<img id="totlLogo" src="./images/totl.png" alt="Logo" />
+			<div id="playIcon">
+				<img src="./images/watchIcon.png" width="100%" height="100%" />
+				<h3 id="playIconText">Add Screen</h3>
+			</div>
+			<div id="threejscontainer"></div>
+			<div id="hbcontainer"></div>
+			<script type="module" src="/main.js"></script>
+			<img id="backgroundImg" src="./images/verseBackground.png" />
+			<h1 id="bottomText">Scroll to Zoom&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbspClick and Drag to Rotate&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbspArrows to Move</h1>
+		</div>
 	</body>
 	<script type="module">
+
+		setTimeout(() => {
+                loaderContainer.style.opacity = 0;
+        }, 2000)
+
 		setTimeout(() => {
 			bottomText.style.opacity = 0;
 		}, 5000)

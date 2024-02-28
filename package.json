@@ -14,5 +14,6 @@
   "dependencies": {
     "@hyperbeam/web": "^0.0.15",
     "three": "^0.143.0"
-  }
+  },
+  "homepage": "./"
 }

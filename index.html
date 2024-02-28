@@ -14,17 +14,27 @@
 		<meta name="twitter:card" content="summary_large_image">
 		<meta name="twitter:site" content="@hyperbeamapi">
 		<link href="https://hyperbeam.com/images/favicon.png" rel="shortcut icon" type="image/x-icon">
+		<link href="https://fonts.googleapis.com/css?family=Montserrat:200" rel="stylesheet">
 		<link href="https://fonts.googleapis.com/css?family=Montserrat:300" rel="stylesheet">
+		<link href="https://fonts.googleapis.com/css?family=Montserrat:400" rel="stylesheet">
 	</head>
 	<body>
 		<div id="loaderContainer">
 			<img id="loadGif" src="./images/loader.gif" alt="Black" />
 		</div>
 		<div id="socialContainer">
-			<div id="playIcon">
+			<div id="galleryIcon">
 				<img src="./images/browseButton.png" style="position: absolute; width: 70%; height: 70%; top: 15%; left: 15%" />
-				<h3 id="playIconText">Edit View</h3>
 			</div>
+			<div id="addIcon">
+				<img id="plusImg" src="./images/plus.png" style="position: absolute; width: 39px; height: 39px; top: 10.5px; left: 10.5px" />
+				<img id="browserIcon" src="./images/watchIcon.png" style="position: absolute; width: 55px; height: 55px; top: 65px; left: 2.5px; opacity: 0; transition: opacity 0.75s" />
+				<img id="gameIcon" src="./images/playIcon.png" style="position: absolute; width: 55px; height: 55px; top: 125px; left: 2.5px; opacity: 0; transition: opacity 0.75s" />
+			</div>
+			<div id="galleryLabel">View Gallery</div>
+			<div id="addLabel">Add Activity</div>
+			<div id="browserLabel">Shared Browser Session</div>
+			<div id="gameLabel">Shared Game Session</div>
 			<div id="threejscontainer"></div>
 			<div id="hbcontainer"></div>
 			<script type="module" src="/main.js"></script>
@@ -34,6 +44,8 @@
 	</body>
 	<script type="module">
 
+		let plusOpened = false;
+
 		setTimeout(() => {
         	loaderContainer.style.opacity = 0;
         }, 2000)
@@ -41,5 +53,64 @@
 		setTimeout(() => {
 			bottomText.style.opacity = 0;
 		}, 5000)
+
+		addIcon.addEventListener("click", (e) => {
+			if(!plusOpened) {
+				addIcon.style.height = "210px";
+				plusImg.src = "./images/minus.png"
+				addLabel.style.opacity = 0;
+				setTimeout(() => {
+					plusOpened = true;
+					browserIcon.style.opacity = 1;
+					gameIcon.style.opacity = 1;
+				}, 250)
+			}
+		})
+
+		socialContainer.addEventListener("click", (e) => {
+			if(plusOpened && (e.target.id === "socialContainer" || e.target.id === "plusImg")) {
+				plusOpened = false;
+				browserIcon.style.opacity = 0;
+				gameIcon.style.opacity = 0;
+				setTimeout(() => {
+					addIcon.style.height = "60px";
+				}, 500);
+				setTimeout(() => {
+					plusImg.src = "./images/plus.png"
+				}, 800);
+			}
+		})
+
+		galleryIcon.addEventListener("mouseover", (e) => {
+			galleryLabel.style.opacity = 1;
+		})
+
+		galleryIcon.addEventListener("mouseout", (e) => {
+			galleryLabel.style.opacity = 0;
+		})
+
+		addIcon.addEventListener("mouseover", (e) => {
+			if(!plusOpened) addLabel.style.opacity = 1;
+		})
+
+		addIcon.addEventListener("mouseout", (e) => {
+			addLabel.style.opacity = 0;
+		})
+
+		browserIcon.addEventListener("mouseover", (e) => {
+			if(plusOpened) browserLabel.style.opacity = 1;
+		})
+
+		browserIcon.addEventListener("mouseout", (e) => {
+			browserLabel.style.opacity = 0;
+		})
+
+		gameIcon.addEventListener("mouseover", (e) => {
+			if(plusOpened) gameLabel.style.opacity = 1;
+		})
+
+		gameIcon.addEventListener("mouseout", (e) => {
+			gameLabel.style.opacity = 0;
+		})
 	</script>
 </html>

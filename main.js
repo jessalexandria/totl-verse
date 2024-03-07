@@ -31,14 +31,12 @@ window.onload = () => {
 				if (body.room !== room) {
 					window.parent.postMessage({sender: "Verse", message: body.room}, "*");
 					console.log("EMBED URL: ", body.url)
-					this.location.replace(body.url);
 					embedURL = body.url
-					//main(embedURL, "new")
+					main(embedURL, "new")
 				} else {
 					console.log("EMBED URL: ", body.url)
-					this.location.replace(body.url);
 					embedURL = body.url
-					//main(embedURL, "old")
+					main(embedURL, "old")
 				}
             }
         });

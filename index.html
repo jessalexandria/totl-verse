@@ -35,7 +35,7 @@
 			<div id="galleryLabel">View Gallery</div>
 			<div id="addLabel">Add Activity</div>
 			<div id="browserLabel"></div>
-			<div id="gameLabel">Shared Game Session</div>
+			<div id="gameLabel"></div>
 			<div id="threejscontainer"></div>
 			<div id="hbcontainer"></div>
 			<script type="module" src="/main.js"></script>
@@ -63,7 +63,7 @@
 				setTimeout(() => {
 					plusOpened = true;
 					browserIcon.style.opacity = 0.5;
-					gameIcon.style.opacity = 1;
+					gameIcon.style.opacity = 0.5;
 				}, 250)
 			}
 		})
@@ -107,7 +107,7 @@
 		})
 
 		gameIcon.addEventListener("mouseover", (e) => {
-			if(plusOpened) gameLabel.style.opacity = 1;
+			if(plusOpened) gameLabel.style.opacity = 0.5;
 		})
 
 		gameIcon.addEventListener("mouseout", (e) => {

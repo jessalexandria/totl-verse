@@ -62,7 +62,7 @@
 				addLabel.style.opacity = 0;
 				setTimeout(() => {
 					plusOpened = true;
-					browserIcon.style.opacity = 1;
+					browserIcon.style.opacity = 0.5;
 					gameIcon.style.opacity = 1;
 				}, 250)
 			}
@@ -99,7 +99,7 @@
 		})
 
 		browserIcon.addEventListener("mouseover", (e) => {
-			if(plusOpened) browserLabel.style.opacity = 1;
+			if(plusOpened) browserLabel.style.opacity = 0.5;
 		})
 
 		browserIcon.addEventListener("mouseout", (e) => {

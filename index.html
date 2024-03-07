@@ -65,6 +65,15 @@
 					browserIcon.style.opacity = 0.5;
 					gameIcon.style.opacity = 0.5;
 				}, 250)
+			} else {
+				plusOpened = false;
+				browserIcon.style.opacity = 0;
+				gameIcon.style.opacity = 0;
+				addIcon.style.height = "60px";
+				setTimeout(() => {
+					plusImg.src = "https://totl.us/social/images/plus.png"
+					addLabel.style.opacity = 1;
+				}, 350)
 			}
 		})
 

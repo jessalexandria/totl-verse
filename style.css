@@ -233,6 +233,7 @@ html, body {
 	margin: 0px;
 	pointer-events: none;
 	object-fit: cover;
+    opacity: 0.4;
 	-webkit-touch-callout: none; /* iOS Safari */
     -webkit-user-select: none; /* Safari */
      -khtml-user-select: none; /* Konqueror HTML */

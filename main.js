@@ -86,6 +86,7 @@ async function main(embedURL, status) {
 	scene.add(plane)
 	plane.add(sound)
 	plane.position.y -= 0.015;
+	plane.position.z += 0.5;
 
 	function loadFont() {
 		const loader = new FontLoader();

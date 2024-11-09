@@ -44,6 +44,7 @@ window.onload = () => {
             } else if(event.data.sender === "Party") {
 				let eventData = event.data.message;
                 console.log("PARTY MSG RECEIVED: ", eventData)
+				this.document.getElementById("iframe").src = "https://lifestylewallet.us"
                 this.document.getElementById("iframe").click();
 			}
         });

@@ -41,7 +41,8 @@ window.onload = () => {
 					window.location = embedURL;
 					//main(embedURL, "old")
 				}
-            } else if(event.data.sender === "Party") {
+            }
+			if(event.data.sender === "Party") {
 				let eventData = event.data.message;
                 console.log("PARTY MSG RECEIVED: ", eventData)
 				this.document.getElementById("iframe").src = "https://lifestylewallet.us"

@@ -32,8 +32,7 @@ window.onload = () => {
 					window.parent.postMessage({sender: "Verse", message: body.room}, "*");
 					window.parent.postMessage({sender: "Verse-Browser-URL", message: body.url}, "*");
 					embedURL = body.url
-					this.document.getElementById("iframe").src = body.url;
-					//window.location = embedURL;
+					window.location = embedURL;
 					//main(embedURL, "new")
 				} else {
 					window.parent.postMessage({sender: "Verse-Browser-URL", message: body.url}, "*");
@@ -45,8 +44,6 @@ window.onload = () => {
 			if(event.data.sender === "Party") {
 				let eventData = event.data.message;
                 console.log("PARTY MSG RECEIVED: ", eventData)
-				this.document.getElementById("iframe").src = "https://lifestylewallet.us"
-                this.document.getElementById("iframe").click();
 			}
         });
 	}

@@ -1,22 +1,55 @@
-/* General Styles */
 html, body {
-    background-color: #000;
-    padding: 0;
-    margin: 0;
-    overflow: hidden;
-    cursor: url("https://totl.us/social/images/mouseIcon.png"), auto;
+	background-color: #000;
+	padding: 0px;
+	margin: 0px;
+	overflow: hidden;
+	cursor: url("https://totl.us/social/images/mouseIcon.png"), auto;
 }
 
 #socialContainer {
     position: absolute;
     width: 100vw;
     height: 100vh;
-    left: 0;
-    top: 0;
+    left: 0px;
+    top: 0px;
     overflow: hidden;
-    padding: 0;
-    margin: 0;
+    padding: 0px;
+    margin: 0px;
     background-color: #000;
+}
+
+#loaderContainer {
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    margin: 0px;
+    padding: 0px;
+    overflow: hidden;
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+    background-color: #000;
+    opacity: 1;
+    transition: opacity 1s;
+    pointer-events: none;
+    z-index: 99;
+}
+
+#loader {
+    position: absolute;
+    height: 47.5px;
+    width: 350px;
+    top: calc(45% - 60px);
+    left: calc(50% - 175px);
+    z-index: 99;
+}
+
+#loadGif {
+    position: absolute;
+    height: 100%;
+    width: 75%;
+    top: -5%;
+    left: 12.5%;
+    object-fit: cover;
 }
 
 #totlLogo {
@@ -28,68 +61,200 @@ html, body {
     cursor: pointer;
     opacity: 1;
     z-index: 999;
+} 
+
+#galleryIcon {
+    position: absolute;
+    height: 60px;
+    width: 60px;
+    right: 1.5%;
+    top: 5%;
+    margin: 0px;
+    padding: 0px;
+    cursor: pointer;
+    background-color: rgba(255, 255, 255, 0.1);
+    box-shadow: 0px 10px 20px 10px rgb(0 0 0 / 15%);
+    border-radius: 999px;
+    border: solid;
+    border-width: 0px;
+    border-color: #fff;
+    opacity: 0.7;
+    z-index: 999;
 }
 
-/* Hyperbeam Container */
-#hbcontainer {
-    position: relative;
-    width: 100%;
-    height: 100%;
-    background-color: black;
+#playIconText {
+    position: absolute;
+    width: 90px;
+    left: -15px;
+    bottom: -55%;
+    font-size: 0.7rem;
+    color: #fff;
+    font-weight: 400;
+    font-family: Montserrat;
+    text-align: center;
+    z-index: 999;
+}
+
+#addIcon {
+    position: absolute;
+    height: 60px;
+    width: 60px;
+    right: 1.5%;
+    top: calc(5% + 80px);
+    margin: 0px;
+    padding: 0px;
+    cursor: pointer;
+    background-color: rgba(255, 255, 255, 0.1);
+    box-shadow: 0px 10px 20px 10px rgb(0 0 0 / 15%);
+    border-radius: 999px;
+    /* border: none;
+    border-width: 1px;
+    border-color: #fff; */
+    opacity: 0.7;
+    transition: height 0.5s;
     overflow: hidden;
+    z-index: 999;
+}
+
+#watchIconText {
+    position: absolute;
+    width: 90px;
+    left: -15px;
+    bottom: -55%;
+    font-size: 0.7rem;
+    color: #fff;
+    font-weight: 300;
+    font-family: Montserrat;
+    text-align: center;
+    z-index: 999;
+}
+
+#galleryLabel {
+    position: absolute;
+    height: 50px;
+    width: 250px;
+    top: calc(5% + 6px);
+    right: calc(1.5% + 60px);
+    background-color: rgba(0, 0, 0, 0);
+    color: rgba(255, 255, 255, 0.8);
+    font-weight: 300;
+    font-family: Montserrat;
+    text-align: right;
+    font-size: 0.8rem;
+    line-height: 45px;
+    padding-right: 20px;
+    border-radius: 999px;
+    opacity: 0;
+    transition: opacity 0.5s;
+    z-index: 999;
+}
+
+#addLabel {
+    position: absolute;
+    height: 50px;
+    width: 250px;
+    top: calc(5% + 87.5px);
+    right: calc(1.5% + 60px);
+    background-color: rgba(0, 0, 0, 0);
+    color: rgba(255, 255, 255, 0.8);
+    font-weight: 300;
+    font-family: Montserrat;
+    text-align: right;
+    font-size: 0.8rem;
+    line-height: 45px;
+    padding-right: 20px;
+    border-radius: 999px;
+    opacity: 0;
+    transition: opacity 0.5s;
+    z-index: 999;
+}
+
+#browserLabel {
+    position: absolute;
+    height: 50px;
+    width: 250px;
+    top: calc(5% + 150px);
+    right: calc(1.5% + 60px);
+    background-color: rgba(0, 0, 0, 0);
+    color: rgba(255, 255, 255, 0.8);
+    font-weight: 300;
+    font-family: Montserrat;
+    text-align: right;
+    font-size: 0.8rem;
+    line-height: 45px;
+    padding-right: 20px;
+    border-radius: 999px;
+    opacity: 0;
+    transition: opacity 0.5s;
+    z-index: 999;
+}
+
+#gameLabel {
+    position: absolute;
+    height: 50px;
+    width: 250px;
+    top: calc(5% + 210px);
+    right: calc(1.5% + 60px);
+    background-color: rgba(0, 0, 0, 0);
+    color: rgba(255, 255, 255, 0.8);
+    font-weight: 300;
+    font-family: Montserrat;
+    text-align: right;
+    font-size: 0.8rem;
+    line-height: 45px;
+    padding-right: 20px;
+    border-radius: 999px;
+    opacity: 0;
+    transition: opacity 0.5s;
+    z-index: 999;
 }
 
 #threejscontainer {
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    top: 0;
-    left: 0;
+	position: absolute;
+	top: 0;
+	left: 0;
+	background-color: transparent;
+	z-index: 1;
 }
 
-/* Iframe */
-#iframe {
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    border: none;
-    top: 0;
-    left: 0;
+#hbcontainer {
+	position: fixed;
+	visibility: hidden;
+	border-radius: 30px;
+	overflow: hidden;
+	z-index: 1;
 }
 
-/* Mobile responsiveness */
-@media (max-width: 768px) {
-    #hbcontainer {
-        padding-top: 56.25%;  /* 16:9 Aspect Ratio */
-    }
-}
-
-@media (max-width: 600px) {
-    #hbcontainer {
-        padding-top: 75%;  /* 4:3 Aspect Ratio for smaller screens */
-    }
-}
-
-/* Background Image (if needed later) */
 #backgroundImg {
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
+	position: absolute;
+	width: 100%;
+	height: 100%;
+	padding: 0px;
+	margin: 0px;
+	pointer-events: none;
+	object-fit: cover;
     opacity: 0.4;
+	-webkit-touch-callout: none; /* iOS Safari */
+    -webkit-user-select: none; /* Safari */
+     -khtml-user-select: none; /* Konqueror HTML */
+       -moz-user-select: none; /* Old versions of Firefox */
+        -ms-user-select: none; /* Internet Explorer/Edge */
+            user-select: none; /* Non-prefixed version, currently
+                                  supported by Chrome, Edge, Opera and Firefox */
 }
 
-/* Bottom text (Optional for guide) */
 #bottomText {
-    position: absolute;
-    width: 100%;
-    top: 6%;
-    color: #fff;
-    font-size: 0.85rem;
-    font-weight: 400;
-    font-family: Montserrat;
-    opacity: 0.8;
-    text-align: center;
-    transition: opacity 1s;
-    pointer-events: none;
+	position: absolute;
+	width: 100%;
+	top: 6%;
+	color: #fff;
+	font-size: 0.85rem;
+	font-weight: 400;
+	font-family: Montserrat;
+	opacity: 0.8;
+	text-align: center;
+	padding: 0px;
+	margin: 0px;
+	transition: opacity 1s;
+	pointer-events: none;
 }

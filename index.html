@@ -3,18 +3,125 @@
 	<head>
 		<meta charset="UTF-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-		<title>Totl Social</title>
+		<title>Hyperbeam — Embed virtual computers in Three.js</title>
+		<meta name="description" content="Add any application to your Metaverse using Hyperbeam. Ditch screenshare and run Chrome in 3D spaces for interactive demos. Play and synchronize media from any website like YouTube and Soundcloud. Get started for free here: https://hyperbeam.com/">
+		<meta property="og:description" content="Add any application to your Metaverse using Hyperbeam. Ditch screenshare and run Chrome in 3D spaces for interactive demos. Play and synchronize media from any website like YouTube and Soundcloud. Get started for free at hyperbeam.com">
+		<meta property="og:title" content="Hyperbeam — Embed virtual computers in Three.js">
+		<meta property="og:image" content="https://raw.githubusercontent.com/hyperbeam/threejs-example/master/meta.png">
+		<meta property="og:url" content="https://threejs-example.hyperbeam.com">
+		<meta property="og:site_name" content="Hyperbeam">
+		<meta property="og:type" content="website">
+		<meta name="twitter:card" content="summary_large_image">
+		<meta name="twitter:site" content="@hyperbeamapi">
+		<link href="https://hyperbeam.com/images/favicon.png" rel="shortcut icon" type="image/x-icon">
 		<link href="https://fonts.googleapis.com/css?family=Montserrat:200" rel="stylesheet">
 		<link href="https://fonts.googleapis.com/css?family=Montserrat:300" rel="stylesheet">
 		<link href="https://fonts.googleapis.com/css?family=Montserrat:400" rel="stylesheet">
 	</head>
 	<body>
-		<img id="totlLogo" src="./images/totl.png" alt="Logo" />
+			<img id="totlLogo" src="./images/totl.png" alt="Logo" />
+			<!-- <div id="galleryIcon">
+				<img src="./images/browseButton.png" style="position: absolute; width: 70%; height: 70%; top: 15%; left: 15%" />
+			</div>
+			<div id="addIcon">
+				<img id="plusImg" src="https://totl.us/social/images/plus.png" style="position: absolute; width: 39px; height: 39px; top: 10.5px; left: 10.5px" />
+				<img id="browserIcon" src="./images/watchIcon.png" style="position: absolute; width: 55px; height: 55px; top: 65px; left: 2.5px; opacity: 0; transition: opacity 0.75s" />
+				<img id="gameIcon" src="./images/playIcon.png" style="position: absolute; width: 55px; height: 55px; top: 125px; left: 2.5px; opacity: 0; transition: opacity 0.75s" />
+			</div> -->
+		<!-- <div id="loaderContainer">
+			<img id="loadGif" src="./images/loader.gif" alt="Black" />
+		</div> -->
 		<div id="socialContainer">
+			<!-- <div id="galleryLabel">View Gallery</div> -->
+			<!-- <div id="addLabel">Add Activity</div> -->
+			<!-- <div id="browserLabel"></div>
+			<div id="gameLabel"></div> -->
 			<div id="threejscontainer"></div>
 			<iframe id="iframe" src=""></iframe>
 			<div id="hbcontainer"></div>
 			<script type="module" src="/main.js"></script>
+			<!-- <img id="backgroundImg" src="./images/socialBackground.jpeg" /> -->
+			<!-- <h1 id="bottomText">Scroll to Zoom&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbspClick and Drag to Rotate&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbspArrows to Move</h1> -->
 		</div>
 	</body>
+	<script type="module">
+
+		let plusOpened = false;
+
+		// setTimeout(() => {
+        // 	loaderContainer.style.opacity = 0;
+        // }, 1500)
+
+		// setTimeout(() => {
+		// 	bottomText.style.opacity = 0;
+		// }, 5000)
+
+		// addIcon.addEventListener("click", (e) => {
+		// 	if(!plusOpened) {
+		// 		addIcon.style.height = "210px";
+		// 		plusImg.src = "https://totl.us/social/images/minus.png"
+		// 		addLabel.style.opacity = 0;
+		// 		setTimeout(() => {
+		// 			plusOpened = true;
+		// 			browserIcon.style.opacity = 0.5;
+		// 			gameIcon.style.opacity = 0.5;
+		// 		}, 250)
+		// 	} else {
+		// 		plusOpened = false;
+		// 		browserIcon.style.opacity = 0;
+		// 		gameIcon.style.opacity = 0;
+		// 		addIcon.style.height = "60px";
+		// 		setTimeout(() => {
+		// 			plusImg.src = "https://totl.us/social/images/plus.png"
+		// 			addLabel.style.opacity = 1;
+		// 		}, 350)
+		// 	}
+		// })
+
+		// socialContainer.addEventListener("click", (e) => {
+		// 	if(plusOpened && (e.target.id === "socialContainer" || e.target.id === "plusImg")) {
+		// 		plusOpened = false;
+		// 		browserIcon.style.opacity = 0;
+		// 		gameIcon.style.opacity = 0;
+		// 		setTimeout(() => {
+		// 			addIcon.style.height = "60px";
+		// 		}, 500);
+		// 		setTimeout(() => {
+		// 			plusImg.src = "https://totl.us/social/images/plus.png"
+		// 		}, 800);
+		// 	}
+		// })
+
+		// galleryIcon.addEventListener("mouseover", (e) => {
+		// 	galleryLabel.style.opacity = 1;
+		// })
+
+		// galleryIcon.addEventListener("mouseout", (e) => {
+		// 	galleryLabel.style.opacity = 0;
+		// })
+
+		// addIcon.addEventListener("mouseover", (e) => {
+		// 	if(!plusOpened) addLabel.style.opacity = 1;
+		// })
+
+		// addIcon.addEventListener("mouseout", (e) => {
+		// 	addLabel.style.opacity = 0;
+		// })
+
+		// browserIcon.addEventListener("mouseover", (e) => {
+		// 	if(plusOpened) browserLabel.style.opacity = 0.5;
+		// })
+
+		// browserIcon.addEventListener("mouseout", (e) => {
+		// 	browserLabel.style.opacity = 0;
+		// })
+
+		// gameIcon.addEventListener("mouseover", (e) => {
+		// 	if(plusOpened) gameLabel.style.opacity = 0.5;
+		// })
+
+		// gameIcon.addEventListener("mouseout", (e) => {
+		// 	gameLabel.style.opacity = 0;
+		// })
+	</script>
 </html>

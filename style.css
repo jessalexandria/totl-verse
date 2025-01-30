@@ -1,3 +1,4 @@
+/* General Styles */
 html, body {
     background-color: #000;
     padding: 0;
@@ -18,38 +19,6 @@ html, body {
     background-color: #000;
 }
 
-#loaderContainer {
-    position: absolute;
-    height: 100%;
-    width: 100%;
-    margin: 0;
-    padding: 0;
-    overflow: hidden;
-    background-color: #000;
-    opacity: 1;
-    transition: opacity 1s;
-    pointer-events: none;
-    z-index: 99;
-}
-
-#loader {
-    position: absolute;
-    height: 47.5px;
-    width: 350px;
-    top: calc(45% - 60px);
-    left: calc(50% - 175px);
-    z-index: 99;
-}
-
-#loadGif {
-    position: absolute;
-    height: 100%;
-    width: 75%;
-    top: -5%;
-    left: 12.5%;
-    object-fit: cover;
-}
-
 #totlLogo {
     position: fixed;
     height: 40px;
@@ -61,14 +30,34 @@ html, body {
     z-index: 999;
 }
 
+/* Hyperbeam Container */
 #hbcontainer {
     position: relative;
-    width: 100vw;
-    height: 100vh;
+    width: 100%;
+    height: 100%;
     background-color: black;
     overflow: hidden;
 }
 
+#threejscontainer {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+}
+
+/* Iframe */
+#iframe {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    border: none;
+    top: 0;
+    left: 0;
+}
+
+/* Mobile responsiveness */
 @media (max-width: 768px) {
     #hbcontainer {
         padding-top: 56.25%;  /* 16:9 Aspect Ratio */
@@ -81,6 +70,7 @@ html, body {
     }
 }
 
+/* Background Image (if needed later) */
 #backgroundImg {
     position: absolute;
     width: 100%;
@@ -89,6 +79,7 @@ html, body {
     opacity: 0.4;
 }
 
+/* Bottom text (Optional for guide) */
 #bottomText {
     position: absolute;
     width: 100%;

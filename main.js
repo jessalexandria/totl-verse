@@ -28,9 +28,12 @@ window.onload = () => {
 					  "Authorization": "Bearer " + 'sk_test_-t8afJWJ0sxPq30_4iUofnwfZGvJV2DXUlMfOF6I8KI'
 					},
 					body: JSON.stringify({
-					  // optional: pass a "url": "https://example.com" to open a site immediately
+					  url: "https://watchluna.com",
 					})
 				  });
+				return new Response(await hbRes.text(), {
+					headers: { "Content-Type": "application/json" },
+				});
 				if (req.status >= 400) {
 					alert("We are out of demo servers! Visit hyperbeam.dev to get your own API key")
 					return

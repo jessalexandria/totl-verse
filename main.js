@@ -20,7 +20,17 @@ window.onload = () => {
                 let eventData = event.data.message;
                 console.log("VERSE ROOM RECEIVED: ", eventData)
                 const room = eventData;
-				const req = await fetch("https://demo-api.tutturu.workers.dev/" + room)
+				//const req = await fetch("https://demo-api.tutturu.workers.dev/" + room)
+				const req = await fetch("https://engine.hyperbeam.com/v0/vm", {
+					method: "POST",
+					headers: {
+					  "Content-Type": "application/json",
+					  "Authorization": "Bearer " + 'sk_test_-t8afJWJ0sxPq30_4iUofnwfZGvJV2DXUlMfOF6I8KI'
+					},
+					body: JSON.stringify({
+					  // optional: pass a "url": "https://example.com" to open a site immediately
+					})
+				  });
 				if (req.status >= 400) {
 					alert("We are out of demo servers! Visit hyperbeam.dev to get your own API key")
 					return
